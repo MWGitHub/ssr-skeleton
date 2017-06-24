@@ -3,7 +3,7 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import Routes from './Routes';
+import ServerRoot from './ServerRoot';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,7 +13,7 @@ app.use('/static', express.static(path.join(__dirname, 'src', 'static')));
 app.get('*', (req, res) => {
   const context = {};
   const html = renderToString(
-    <Routes
+    <ServerRoot
       Router={StaticRouter}
       location={req.url}
       context={context}

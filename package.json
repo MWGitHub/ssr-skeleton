@@ -1,0 +1,50 @@
+{
+  "name": "groupradio",
+  "description": "Radio where the next songs are suggested and voted on by listeners.",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "build:server": "webpack --progress",
+    "watch:server-bundle": "npm run build:server -- --watch",
+    "watch:server": "nodemon dist/server.bundle.js --watch dist/server.bundle.js",
+    "dev": "npm-run-all --parallel watch:server watch:server-bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MWGitHub/groupradio.git"
+  },
+  "keywords": [
+    "radio"
+  ],
+  "author": "Michael Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MWGitHub/groupradio/issues"
+  },
+  "homepage": "https://github.com/MWGitHub/groupradio#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "source-map-support": "^0.4.15",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1"
+  }
+}

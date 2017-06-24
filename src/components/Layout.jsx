@@ -13,7 +13,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.object.isRequired // eslint-disable-line
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

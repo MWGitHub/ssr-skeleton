@@ -20,9 +20,13 @@ app.get('*', (req, res) => {
     />
   );
 
+  if (context.status) {
+    res.status(context.status);
+  }
+
   res.send(html);
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on ${port}.`);
+  console.log(`Server listening on ${port}.`); // eslint-disable-line no-console
 });

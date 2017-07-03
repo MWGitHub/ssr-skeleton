@@ -1,7 +1,8 @@
 const webpack = require('webpack'); // eslint-disable-line
 const path = require('path');
 
-const common = {
+const server = {
+  context: __dirname,
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -14,15 +15,14 @@ const common = {
       }
     ],
   },
-};
-
-const client = {
-
-};
-
-const server = {
-  entry: path.join(__dirname, 'src', 'server.jsx'),
+  entry: [
+    'babel-polyfill',
+    path.join(__dirname, 'src', 'server.jsx')
+  ],
   target: 'node',
+  node: {
+    __dirname: true
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'server.bundle.js'
@@ -37,7 +37,4 @@ const server = {
   devtool: 'source-map'
 };
 
-module.exports = [
-  // Object.assign({}, common, client),
-  Object.assign({}, common, server)
-];
+module.exports = server;

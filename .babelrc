@@ -1,3 +1,7 @@
 {
-  "presets": ["react", "latest"]
+  "presets": ["react", "latest"],
+  "plugins": [
+    "transform-async-functions",
+    "transform-regenerator"    
+  ]
 }

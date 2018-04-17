@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Root = ({ children }) => (
   <html lang="en">
     <head>
-      <title>Group Radio</title>
+      <title>SSR Skeleton</title>
     </head>
     <body>
       <div id="app">

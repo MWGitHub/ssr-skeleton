@@ -2,41 +2,17 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router';
-import { matchPath } from 'react-router-dom';
 import Root from './containers/Root';
-import ServerRoot from './ServerRoot';
-import routes from './route-config';
+import Inner from './containers/Inner';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-async function loadRouteData(url) {
-  const match = routes.find(route => matchPath(url, route));
-
-  let data = {};
-  if (!match || !match.load) return data;
-
-  try {
-    data = await match.load();
-  } catch (e) {
-    console.error(e);
-  }
-
-  return data;
-}
-
 async function requestHandler(req, res) {
-  const data = await loadRouteData(req.url);
   const context = {};
   const html = renderToString(
     <Root>
-      <ServerRoot
-        Router={StaticRouter}
-        location={req.url}
-        context={context}
-        data={data}
-      />
+      <Inner />
     </Root>
   );
 

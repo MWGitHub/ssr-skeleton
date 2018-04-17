@@ -1,6 +1,6 @@
 # React SSR Skeleton
 
-Usage
+### Usage
 
 `npm i`
 `npm run dev`
@@ -13,6 +13,7 @@ Click the "Click" button, it should log something.
 
 Change the following line in `./src/containers/Inner.jsx' from
 `ReactDOM.hydrate(<Inner />, document.getElementById('app'));`
-to use `ReactDOM.render` instead.
+to
+``ReactDOM.hydrate(<Inner />, document.getElementById('app'));`
 
 The console log should now show for both the image loading and click.

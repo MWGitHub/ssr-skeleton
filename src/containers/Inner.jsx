@@ -10,6 +10,7 @@ class Inner extends React.Component {
     };
 
     this.handleLoad = this.handleLoad.bind(this);
+    this.clicked = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -23,10 +24,19 @@ class Inner extends React.Component {
     this.setState({ isLoaded: true });
   }
 
+  handleClick() {
+    console.log('pet the pug');
+  }
+
   render() {
     return (
       <div>
-        <span>pug</span>
+        <h1>pug</h1>
+        <p>
+          <button onClick={this.handleClick}>
+            Click
+          </button>
+        </p>
         <img
           src={'https://i.ytimg.com/vi/wRx3Uvcktm8/maxresdefault.jpg'}
           onLoad={this.handleLoad}

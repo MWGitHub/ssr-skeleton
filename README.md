@@ -20,6 +20,6 @@ Change the following line in `./src/containers/Inner.jsx' from
 
 to
 
-`ReactDOM.hydrate(<Inner />, document.getElementById('app'));`
+`ReactDOM.render(<Inner />, document.getElementById('app'));`
 
 The console log should now show for both the image loading and click.

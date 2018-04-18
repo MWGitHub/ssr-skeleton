@@ -29,12 +29,13 @@ class Inner extends React.Component {
   }
 
   render() {
+    console.log('rerendering boop', this.state.boop, this.state.isLoaded);
     return (
       <div>
         <h1>pug</h1>
         <p>
           <button onClick={this.handleClick}>
-            Click
+            {this.state.boop ? 'boop' : 'button'}
           </button>
         </p>
         <img
